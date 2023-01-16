@@ -1,23 +1,13 @@
 #include <iostream>
 using namespace std;
- int main(){
-    double a =2.5;
-    double* pa = &a;
-    cout<<"a= "<<a<<" &a="<<pa<<endl;
-    *pa=3.1;
-    cout<<"a= "<<a<<" &a="<<pa<<endl;
-    double b=6.6;
-    double *pb = &b;
-    cout<<"b= "<<b<<" &b="<<pb<<endl;
+ 
+template <class T>
+T findmax(T x, T y){
+   return (x > y)? x:y;
+}
 
-    *pb=*pa;
-    cout<<"a= "<<a<<" &a="<<pa<<endl;
-    cout<<"b= "<<b<<" &b="<<pb<<endl;
-    
-    cout<<sizeof(int)<<endl;
-    cout<<sizeof(double)<<endl;
-    cout<<sizeof(int*)<<endl;
-    cout<<sizeof(double*)<<endl;
-    cout<<sizeof(bool)<<endl;
-
- }
+int main(){
+   cout<< findmax(3,7)<<endl;
+   cout<< findmax(3.0,7.0)<<endl;
+   cout<< findmax(3,7)<<endl;
+}
